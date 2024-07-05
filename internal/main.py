@@ -5,10 +5,11 @@ from internal.routers import internal
 
 app = FastAPI()
 
-origins = config['cors']['allow_origins']
-allow_credentials = config['cors']['allow_credentials']
-allow_methods = config['cors']['allow_methods']
-allow_headers = config['cors']['allow_headers']
+config_cors = config.get("cors", {})
+origins = config_cors.get("allow_origins", ["*"])
+allow_credentials = config_cors.get("allow_credentials", True)
+allow_methods = config_cors.get("allow_methods", "*")
+allow_headers = config_cors.get("allow_headers", "*")
 
 app.add_middleware(
     CORSMiddleware,
@@ -22,4 +23,5 @@ app.include_router(internal.router, prefix="/api/internal")
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8000)
