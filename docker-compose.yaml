@@ -3,19 +3,19 @@ version: '3.8'
 services:
   backend:
     build:
-      context: ./backend
+      context: .
       dockerfile: Dockerfile
     container_name: fastapi_app
     ports:
       - "8000:8000"
     volumes:
-      - ./backend:/app
+      - ./internal:/app/internal
       - ./config.yaml:/app/config.yaml
     environment:
       CONFIG_PATH: /app/config.yaml
     networks:
       - fastapi_network
-    restart: always 
+    restart: always
     logging:
       driver: "json-file"
       options:
