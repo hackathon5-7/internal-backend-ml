@@ -4,14 +4,20 @@ This repository contains the machine learning backend for our project. It is des
 
 ## Project Structure
 
-- `/data`: Directory for storing datasets and data processing scripts.
-- `/models`: Directory for saving trained models and related artifacts.
-- `/notebooks`: Jupyter notebooks for exploratory data analysis and prototyping.
-- `/src`: Source code for the machine learning backend.
-  - `/src/data`: Scripts for data loading and preprocessing.
-  - `/src/models`: Implementation of machine learning models.
-  - `/src/utils`: Utility functions and helpers.
-- `requirements.txt`: List of dependencies and libraries needed to run the project.
+- `/internal`: Directory for internal modules.
+  - `/internal/models`: Implementation of data classes and request models.
+    - `__init__.py`: Initialization file for the models module.
+    - `data_class.py`: Script for data classes.
+    - `request_model.py`: Script for request models.
+  - `/internal/routers`: Implementation of API routes.
+    - `__init__.py`: Initialization file for the routers module.
+    - `internal.py`: Script for internal routes.
+  - `/internal/services`: Implementation of service logic.
+    - `__init__.py`: Initialization file for the services module.
+    - `prediction_service.py`: Script for prediction service.
+  - `/internal/utils`: Utility functions and helpers.
+    - `__init__.py`: Initialization file for the utils module.
+    - `data_preprocessing.py`: Script for data preprocessing.
 
 ## Technologies Used
 
