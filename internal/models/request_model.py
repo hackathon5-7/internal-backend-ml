@@ -14,5 +14,9 @@ class Point(BaseModel):
     azimuth: int
 
 class RequestModel(BaseModel):
-    targetAudience: TargetAudience
-    points: List[Point]
+    name: str
+    gender: str
+    ageFrom: int
+    ageTo: int
+    income: str
+    count_point_on_segment: list
