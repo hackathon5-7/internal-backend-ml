@@ -1,8 +1,8 @@
-# internal-backend-ml
+# Internal backend, Ml
 
 Frontend <br>
-http://95.163.231.52:3000/authentication
+https://github.com/hackathon5-7/frontend
 <br> <br>
 External Backend 
 <br>
-http://95.163.231.52:8000/do
+https://github.com/hackathon5-7/external-backend
