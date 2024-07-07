@@ -14,7 +14,7 @@ services:
     environment:
       CONFIG_PATH: /app/config.yaml
     networks:
-      - fastapi_network
+      - hackaton_hacknet
     restart: always
     logging:
       driver: "json-file"
@@ -23,5 +23,5 @@ services:
         max-file: "3"
 
 networks:
-  fastapi_network:
+  hackaton_hacknet:
     driver: bridge
