@@ -1,12 +1,9 @@
 from pydantic import BaseModel
 from typing import List
 
-class TargetAudience(BaseModel):
+class RequestData(BaseModel):
     gender: str
     ageFrom: int
     ageTo: int
     income: str
-
-class RequestData(BaseModel):
-    targetAudience: TargetAudience
-    tch: List[float]
+    tch: List[int]
