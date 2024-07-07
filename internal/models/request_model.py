@@ -18,4 +18,4 @@ class RequestModel(BaseModel):
     ageFrom: int
     ageTo: int
     income: str
-    count_point_on_segment: list
+    tch: list
