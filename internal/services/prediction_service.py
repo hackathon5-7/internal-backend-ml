@@ -1,25 +1,17 @@
 from internal.models.data_class import RequestData
+from internal.ml.func import func
 
-def preprocess_data(data):
+def preprocess_data(data: RequestData):
     processed_data = {
         "target_audience": {
-            "name": data.targetAudience.name,
             "gender": data.targetAudience.gender,
             "ageFrom": data.targetAudience.ageFrom,
-            "ageTo" : data.targetAudience.ageTo,
+            "ageTo": data.targetAudience.ageTo,
             "income": data.targetAudience.income,
         },
-        "points": [
-            {
-                "latitude": point.lat,
-                "longitude": point.lon,
-                "azimuth": point.azimuth,
-            }
-            for point in data.points
-        ]
+        "tch": data.tch
     }
     return processed_data
-
 
 def get_prediction_result(data: RequestData):
     """
@@ -27,6 +19,8 @@ def get_prediction_result(data: RequestData):
     """
     prepared_data = preprocess_data(data)
     
-    # prediction = model.predict(prepared_data)
-    prediction = "some prediction"
+    tch = prepared_data["tch"]
+    target_audience = prepared_data["target_audience"]
+    
+    prediction = func(tch, target_audience)
     return prediction
