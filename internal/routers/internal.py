@@ -10,6 +10,13 @@ async def get_place(data: RequestModel):
     Эндпоинт на получение оптимального места размещения рекламы
     """
     try:
+         request_data = RequestData(
+            gender=data.gender,
+            ageFrom=data.ageFrom,
+            ageTo=data.ageTo,
+            income=data.income,
+            tch=data.tch
+        )
         value = get_prediction_result(data)
         response = {"value": value}
         return response
