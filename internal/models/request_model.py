@@ -14,7 +14,6 @@ class Point(BaseModel):
     azimuth: int
 
 class RequestModel(BaseModel):
-    name: Optional[str]
     gender: str
     ageFrom: int
     ageTo: int
