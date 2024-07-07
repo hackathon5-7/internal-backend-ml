@@ -1,4 +1,5 @@
 from internal.models.data_class import RequestData
+from internal.models.request_model import RequestModel
 
 def preprocess_data(data):
     processed_data = {
@@ -21,11 +22,11 @@ def preprocess_data(data):
     return processed_data
 
 
-def get_prediction_result(data: RequestData):
+def get_prediction_result(data: RequestModel):
     """
     Обработка входных данных
     """
-    prepared_data = preprocess_data(data)
+    prepared_data = data.dict()
     
     # prediction = model.predict(prepared_data)
     prediction = "some prediction"

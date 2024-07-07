@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 
 class TargetAudience(BaseModel):
     name: str
@@ -14,7 +14,7 @@ class Point(BaseModel):
     azimuth: int
 
 class RequestModel(BaseModel):
-    name: str
+    name: Optional[str]
     gender: str
     ageFrom: int
     ageTo: int
