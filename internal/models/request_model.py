@@ -1,22 +1,16 @@
 from pydantic import BaseModel
 from typing import List
 
+
 class TargetAudience(BaseModel):
-    name: str
     gender: str
     ageFrom: int
     ageTo: int
     income: str
 
-class Point(BaseModel):
-    lat: str
-    lon: str
-    azimuth: int
+class RequestData(BaseModel):
+    targetAudience: TargetAudience
+    tch: List[int]
 
-class RequestModel(BaseModel):
-    name: str
-    gender: str
-    ageFrom: int
-    ageTo: int
-    income: str
-    count_point_on_segment: list
+    def __repr__(self):
+        return f"RequestData(targetAudience={self.targetAudience}, tch={self.tch})"
